@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>懒加载图片</title>
+</head>
+<body>
+    <!-- 网页在渲染的时候，
+    http的请求数量
+    chrome 性能最好，同时并发的请求数十几个
+    将图片下载 放到dom ready事件之后 将
+    有效提升网页打开速度
+    占位图片 -->
+    <!-- 优化前 n张照片 url 不一样 http 请求数是 n
+    优化后 图片上的http 数量只有1 -->
+    <img class="pic1" src="./youku.png" origin_src="./zhengshuang.jpg" alt="">
+    <img class="" src="./youku.png" origin_src="./gf.jpg" alt="">
+    <script src="./lazyload.js"></script>
+    <script>
+        // 这个已经是用户看到了网页了，dom ready了
+        // 优化图片下载，将其推后
+        window.onload = function() {
+            // 懒加载图片
+            // 在页面打开后，来重新下载图片资源
+            const img = document.querySelector(".pic1");
+            // const url = img.getAttribute("origin_src");
+            // console.log(url);
+            // img.src = url;
+            // 将我们的图片不要直接设置url
+            // const oImg = document.createElement("img");
+            // oImg.style.display = 'none';
+            // document.body.appendChild(oImg);
+            // oImg.src = url;
+            // oImg.onload = function() {
+                // 幕后工作者已经下载了图片
+                // 如果一个url 一旦下载，在浏览器缓存文件
+                // 会在浏览器缓存（静态）文件
+                // img.src = url;
+                LazyLoadImage.setSrc(img);
+                
+            }
+            // 图片的下载是异步，图片有大小
+            
+    </script>
+</body>
+</html>

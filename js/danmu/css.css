@@ -1,0 +1,53 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.detailImg {
+    width: 700px;
+    height: 500px;
+    background-color: #000000;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -350px;
+    margin-top: -250px;
+}
+#barrageDiv>div {
+    position: absolute;
+    background-color: green;
+    height: 20%;
+    width: 100%;
+}
+#barrageLayer1 {
+    top: 0%;
+}
+#barrageLayer2 {
+    top: 25%;
+}
+#barrageLayer3 {
+    top: 50%;
+}
+#barrageLayer4 {
+    top: 75%;
+}
+.barrageDivClass {
+    position: absolute;
+    top: 10px;
+    padding: 0 10px;
+    line-height: 60px;
+  }
+.barrageDivClass_img {
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    background-size: cover;
+    border-radius: 4px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+.barrageDivClass_txt {
+    font-style: 24px;
+    color: white;
+}
