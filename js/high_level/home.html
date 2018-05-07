@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>胡丽莉在BiliBili小家</title>
+    <script src="compute.js"></script>
+</head>
+<body>
+    <div id="user">
+        <img src="" alt="" id="avatar">
+        <p id="username"></p>
+    </div>
+    <form action="" name="userForm">
+        <div class="field">
+            <label for="avatarInput">头像</label>
+            <input type="text" name="avatar" id="avatarInput">
+        </div>
+        <div class="field">
+            <label for="ninknameInput">昵称</label>
+            <input type="text" name="ninkname" id="ninknameInput">
+        </div>
+    </form>
+    <script>
+        window.onload = function() {
+            getUserInfo(renderUserInfo,renderUserForm);
+        }
+    </script>
+</body>
+</html>
