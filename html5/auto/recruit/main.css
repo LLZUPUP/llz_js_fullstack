@@ -51,7 +51,7 @@ html {
   width: 1.5112rem;
   height: 1.5112rem;
   margin: 0.5334em auto 0;
-  background: url("/images/p3_01.png") no-repeat center;
+  background: url("./images/p3_01.png") no-repeat center;
   background-size: 0.8445rem 0.7408rem;
 }
 .timeline_icon svg {
@@ -135,13 +135,13 @@ html {
   font-size: 0.5334rem;
 }
 .timeline_item_cnt .flag_sin {
-  background: url("/images/p3_02.png") no-repeat;
+  background: url("./images/p3_02.png") no-repeat;
 }
 .timeline_item_cnt .flag_us {
-  background: url("/images/p3_03.png") no-repeat;
+  background: url("./images/p3_03.png") no-repeat;
 }
 .timeline_item_cnt .flag_uk {
-  background: url("/images/p3_04.png") no-repeat;
+  background: url("./images/p3_04.png") no-repeat;
 }
 .part3.in .timeline_tit {
   animation: on_tl_tit ease-out 0.4s 1.4s both;
