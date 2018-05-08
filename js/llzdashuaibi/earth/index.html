@@ -5,10 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=1.0, maximum-scale=1.0,user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>llz dashuaibi</title>
+    
 </head>
 <body>
-    <div id="container"></div>
-    <canvas id="webglcanvas"></canvas>
+    <div class="box">
+        <div id="container"></div>
+        <canvas id="webglcanvas"></canvas>
+    </div>
+    
     <!-- 阻塞html下载
     相对路径
     cdn相比
@@ -38,10 +42,10 @@
             window.addEventListener('resize',onWindowResize,false);
         }
         function onDocumentTouchMove(event) {
-            mouseX = event.clientX - windowHalfX;
-            mouseY = event.clientY - windowHalfY;
-            console.log(mouseX,mouseY);
-            console.log(event);
+            mouseX = event.touches[0].clientX - windowHalfX;
+            mouseY = event.touches[0].clientY - windowHalfY;
+            // console.log(mouseX,mouseY);
+            // console.log(event);
             // 基于左上角
             // 鼠标相对于屏幕中心点的偏移量
             
@@ -58,7 +62,7 @@
         function init() {
             canvas = document.getElementById('webglcanvas');
             camera = new THREE.PerspectiveCamera(60,window.innerWidth/window.innerHeight,1,2000);
-            camera.position.z = 500;
+            camera.position.z = 700;
             scene = new THREE.Scene()
             scene.background = new THREE.Color(0xffffff);
             group = new THREE.Group();
