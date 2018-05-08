@@ -33,8 +33,8 @@
         window.onload = function() {
             init();
             animate();
-            document.addEventListener('touchstart',onDocumentMouseMove,false);
-            document.addEventListener('touchend',onDocumentMouseMove,false);
+            document.addEventListener('mouseover',onDocumentMouseMove,false);
+            document.addEventListener('mouseout',onDocumentMouseMove,false);
             document.addEventListener('mousemove',onDocumentMouseMove,false);
             window.addEventListener('resize',onWindowResize,false);
         }
