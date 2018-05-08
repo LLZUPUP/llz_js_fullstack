@@ -33,9 +33,7 @@
         window.onload = function() {
             init();
             animate();
-            document.addEventListener('mouseover',onDocumentMouseMove,false);
-            document.addEventListener('mouseout',onDocumentMouseMove,false);
-            document.addEventListener('mousemove',onDocumentMouseMove,false);
+            document.addEventListener('touchmove',onDocumentMouseMove,false);
             window.addEventListener('resize',onWindowResize,false);
         }
         function onDocumentMouseMove(event) {
