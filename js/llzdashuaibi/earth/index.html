@@ -5,13 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=1.0, maximum-scale=1.0,user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>llz dashuaibi</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body,html {
+            height: 100%;
+            overflow: hidden;
+            
+            
+        }
+       
+    </style>
     
 </head>
-<body>
-    <div class="box">
-        <div id="container"></div>
-        <canvas id="webglcanvas"></canvas>
-    </div>
+<body ontouchstart>
+            <div id="container"></div>
+            <canvas id="webglcanvas"></canvas>
+        
+    
     
     <!-- 阻塞html下载
     相对路径
@@ -29,42 +42,40 @@
         // render canvas 
         const container =
             document.querySelector("#container");
-        let canvas,stats,camera,scene,renderer,group;
+        let canvas = document.getElementById('webglcanvas');
+        let stats,camera,scene,renderer,group;
         let mouseX = 0,mouseY = 0;
-        let windowHalfX = window.innerWidth / 2;
-        let windowHalfY = window.innerHeight / 2;
+        let windowHalfX = window.innerWidth /2;
+        let windowHalfY = window.innerHeight /2;
         // console.log(windowHalfX,windowHalfY);
         window.onload = function() {
             init();
             animate();
             
-            document.addEventListener('touchmove',onDocumentTouchMove,false);
+            canvas.addEventListener('touchmove',onDocumentTouchMove,false);
             window.addEventListener('resize',onWindowResize,false);
         }
         function onDocumentTouchMove(event) {
             mouseX = event.touches[0].clientX - windowHalfX;
             mouseY = event.touches[0].clientY - windowHalfY;
-            // console.log(mouseX,mouseY);
-            // console.log(event);
-            // 基于左上角
-            // 鼠标相对于屏幕中心点的偏移量
-            
-
         }
+        // function onDocumentTouchMove(event) {
+        //     mouseX = event.clientX - windowHalfX;
+        //     mouseY = event.clientY - windowHalfY;
+        // }
         function onWindowResize() {
-            windowHalfX = window.innerWidth / 2;
-            windowHalfY = window.innerHeight / 2;
+            // windowHalfX = window.innerWidth / 2;
+            // windowHalfY = window.innerHeight / 2;
             // console.log(windowHalfX,windowHalfY);
             camera.aspect = window.innerWidth / window.innerHeight;
             camera.updateProjectionMatrix();
             renderer.setSize(window.innerWidth,window.innerHeight);
         }
         function init() {
-            canvas = document.getElementById('webglcanvas');
             camera = new THREE.PerspectiveCamera(60,window.innerWidth/window.innerHeight,1,2000);
-            camera.position.z = 700;
+            camera.position.z = 900;
             scene = new THREE.Scene()
-            scene.background = new THREE.Color(0xffffff);
+            scene.background = new THREE.Color(0x000000);
             group = new THREE.Group();
             scene.add(group);
             // scene<-group<-mesh
@@ -92,10 +103,13 @@
             stats.update();
         }
         function render() {
-            camera.position.x += (mouseX - camera.position.x) *0.05;
-            camera.position.y += (-mouseY - camera.position.y) *0.05;
+            camera.position.x += (mouseX-camera.position.x  ) *0.3;
+            console.log(camera.position.x);
+            camera.position.y += ( -mouseY-camera.position.y) *0.1;
+            camera.position.z += ( mouseY+camera.position.y) *0.08;
+            // console.log(camera.position.x,camera.position.y);
             camera.lookAt(scene.position);
-            group.rotation.y -= 0.005;
+            group.rotation.y -= 0.008;
             renderer.render(scene,camera);
         }
 
