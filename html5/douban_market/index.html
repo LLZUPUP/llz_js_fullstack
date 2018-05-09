@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./common.css">
+</head>
+<body>
+    <div id="db-global-nav" class="global-nav">
+        <div class="bd">
+            <div class="global-nav-items">
+                <ul>
+                    <li class="on"><a href="#">豆瓣</a></li>
+                    <li><a href="#">读书</a></li>
+                    <li><a href="#">电影</a></li>
+                    <li><a href="#">音乐</a></li>
+                    <li><a href="#">同城</a></li>
+                    <li><a href="#">小组</a></li>
+                    <li><a href="#">阅读</a></li>
+                    <li><a href="#">FM</a></li>
+                    <li><a href="#">时间</a></li>
+                    <li><a href="#">市集</a></li>
+                    <li><a href="#">更多</a></li>
+                </ul>
+            </div>
+            <div class="top-nav-info">
+                    <a href="#" class="nav-login">登录</a>
+                    <a href="#" class="nav-register">注册</a>
+            </div>
+            <div class="top-nav-doubanapp more-active">
+                <a href="#" class="lnk-doubanapp">下载豆瓣客户端</a>
+                <div id="top-nav-appintro" class="more-items">
+                    <p class="appintro-title">豆瓣</p>
+                    <p class="qrcode">扫码直接下载</p>
+                    <div class="download">
+                        <a href="#">iPhone</a>
+                        <span>.</span>
+                        <a href="#">Android</a>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <div id="market-main" style="min-width: 657px;">
+        <header id="market-header" class="market-global-header">
+            <div class="header-inner">
+                <div class="logo">
+                    <a href="#" class="market-logo">豆瓣市集</a>
+                </div>
+                <div class="market-user"></div>
+            </div>
+            
+        </header>
+    </div>
+    <script>
+        let doubanApp=document.querySelector(".top-nav-doubanapp");
+        let moreAct = document.querySelector("#top-nav-appintro");
+        doubanApp.onmouseover = function() {
+            moreAct.style.cssText="display:block;position:absolute;border:1px solid #e6e6e6;background-color:#fff;white-space:nowrap;top:28px;"
+        }
+        doubanApp.onmouseout = function() {
+            moreAct.style.cssText="display:none;position:absolute;"
+        }
+        // doubanApp.onmouseout = function() {
+        //     this.className = "top-nav-doubanapp";
+        // }
+    </script>
+</body>
+</html>
