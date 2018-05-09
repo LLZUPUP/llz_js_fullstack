@@ -153,47 +153,47 @@ html {
   animation: on_tl_tit_a 0.4s 1.8s both;
 }
 .part3.in .timeline_icon {
-  animation: on_tl_icon 1.2s 0.5s linear both;
+  animation: on_tl_icon 0.5s 0.5s linear both;
 }
 .part3.in .timeline_icon svg {
-  animation: on_tl_iconsvg 0.5s 0.9s linear both;
+  animation: on_tl_iconsvg 0.5s 0.1s linear both;
 }
 .part3.in .timeline_line {
-  animation: on_tl_line 1.5s 2.2s linear both;
+  animation: on_tl_line 1s 2s linear both;
   transform-origin: 50% 0;
 }
 .part3.in .timeline_item {
   animation: on_tl_item 0.45s ease both;
 }
 .part3.in .timeline_item:nth-child(1) {
-  animation-delay: 3.35s;
+  animation-delay: 2.35s;
 }
 .part3.in .timeline_item:nth-child(2) {
-  animation-delay: 4.35s;
+  animation-delay: 2.55s;
 }
 .part3.in .timeline_item:nth-child(3) {
-  animation-delay: 5.35s;
+  animation-delay: 2.75s;
 }
 .part3.in .timeline_item:nth-child(4) {
-  animation-delay: 6.35s;
+  animation-delay: 2.95s;
 }
 .part3.in .timeline_item:nth-child(5) {
-  animation-delay: 7.35s;
+  animation-delay: 3.15s;
 }
 .part3.in .timeline_item:nth-child(6) {
-  animation-delay: 8.35s;
+  animation-delay: 3.35s;
 }
 .part3.in .timeline_item:nth-child(7) {
-  animation-delay: 9.35s;
+  animation-delay: 3.55s;
 }
 .part3.in .timeline_item:nth-child(8) {
-  animation-delay: 10.35s;
+  animation-delay: 3.75s;
 }
 .part3.in .timeline_item:nth-child(9) {
-  animation-delay: 11.35s;
+  animation-delay: 3.95s;
 }
 .part3.in .timeline_item:nth-child(10) {
-  animation-delay: 12.35s;
+  animation-delay: 4.15s;
 }
 @-moz-keyframes on_tl_tit {
   0% {
@@ -397,7 +397,7 @@ html {
 }
 @-moz-keyframes on_tl_item {
   0% {
-    transform: scale(0, 0);
+    transform: scale(0, 1);
     opacity: 0;
   }
   100% {
@@ -407,7 +407,7 @@ html {
 }
 @-webkit-keyframes on_tl_item {
   0% {
-    transform: scale(0, 0);
+    transform: scale(0, 1);
     opacity: 0;
   }
   100% {
@@ -417,7 +417,7 @@ html {
 }
 @-o-keyframes on_tl_item {
   0% {
-    transform: scale(0, 0);
+    transform: scale(0, 1);
     opacity: 0;
   }
   100% {
@@ -427,7 +427,7 @@ html {
 }
 @keyframes on_tl_item {
   0% {
-    transform: scale(0, 0);
+    transform: scale(0, 1);
     opacity: 0;
   }
   100% {
