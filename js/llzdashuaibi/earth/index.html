@@ -54,6 +54,9 @@
             
             canvas.addEventListener('touchmove',onDocumentTouchMove,false);
             window.addEventListener('resize',onWindowResize,false);
+            document.addEventListener('touchmove',function(e){
+                e.preventDefault();
+            },false)
         }
         function onDocumentTouchMove(event) {
             mouseX = event.touches[0].clientX - windowHalfX;
