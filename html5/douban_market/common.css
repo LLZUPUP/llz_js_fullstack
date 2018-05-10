@@ -447,6 +447,8 @@ body {
 #footer {
     height: 150px;
     width: 100%;
+    min-width: 1100px;
+    max-width: 1440px;
     background-color: #f7f7f7;
     border-top: 1px solid #e4e4e4;
     position: relative;
@@ -463,20 +465,19 @@ body {
     font-size: 26px;
     line-height: 1em;
     color: #9b9b9b;
-    margin-right: 10px;
+    /* margin-right: 10px; */
     position: absolute;
-    left: 50%;
-    margin-left: -304px;
+    /* left: 23%; */
+    margin-left: -23rem;
     top: 28%;
-
-
 }
 #footer .info {
     display: inline-block;
     position: absolute;
     text-align: left;
-    left: 38%;
+    right: 26%;
     top: 22%;
+    white-space: nowrap;
 }
 
 
