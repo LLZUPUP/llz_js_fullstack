@@ -365,6 +365,125 @@ body {
     line-height: 18px;
     margin-left: 3px;
 }
+/* 主体page中部分 */
+.group {
+    margin-bottom: 60px;
+}
+.group .group-hd {
+    clear: both;
+    margin-bottom: 15px;
+    overflow: hidden;
+    line-height: 34px;
+}
+.group .group-hd h4 {
+    font-size: 24px;
+    color: #46a68f;
+    float: left;
+}
+.group .group-hd .more {
+    float: right;
+    font-size: 15px;
+    color: #9b9b9b;
+}
+.group .group-topics li {
+    line-height: 30px;
+    padding: 10px 10px 10px 60px;
+    position: relative;
+    overflow: hidden;
+    clear: both;
+    border-bottom: 1px solid hsla(0,0%,89%,.6);
+}
+.group .group-topics .topic-comment-amount {
+    display: block;
+    min-width: 20px;
+    height: 20px;
+    line-height: 20px;
+    color: #fff;
+    background-color:#e4e4e4;
+    text-align: center;
+    border-radius: 3px;
+    padding: 0 5px;
+    position: absolute;
+    left: 10px;
+    top: 13px;
+}
+.group .group-topics .topic-comment-amount:after {
+    content: '';
+    position: absolute;
+    left: 5px;
+    bottom: -5px;
+    border: 5px solid transparent;
+    border-left: 5px solid #e4e4e4;
+}
+.group .group-topics li .topic-title {
+    font-size: 16px;
+    color: #4a4a4a;
+}
+.group .group-topics li .topic-update-time {
+    float: right;
+    font-size: 16px;
+    color: #9b9b9b;
+}
+/* 主体footer部分 */
+.info-footer {
+    padding: 30px 0;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0 1px 3px #9b9b9b;
+}
+.info-footer .item {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 50px;
+    font-size: 15px;
+    color: #9b9b9b;
+}
+.info-footer .item span {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* 页面底部 */
+#footer {
+    height: 150px;
+    width: 100%;
+    background-color: #f7f7f7;
+    border-top: 1px solid #e4e4e4;
+    position: relative;
+}
+#footer .footer-wrapper {
+    width: 950px;
+    margin: 0 auto;
+    clear: both;
+    overflow: hidden;
+    color: #bdbdbd;
+    text-align: center;
+}
+#footer .logo {
+    font-size: 26px;
+    line-height: 1em;
+    color: #9b9b9b;
+    margin-right: 10px;
+    position: absolute;
+    left: 50%;
+    margin-left: -304px;
+    top: 28%;
+
+
+}
+#footer .info {
+    display: inline-block;
+    position: absolute;
+    text-align: left;
+    left: 38%;
+    top: 22%;
+}
+
+
+
+
+
+
 
 
 

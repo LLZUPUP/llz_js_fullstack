@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>豆瓣市集</title>
     <link rel="stylesheet" href="./common.css">
 </head>
 <body>
@@ -207,6 +207,65 @@
                     </div>
                 </div>
             </div>
+            <div class="homepage-wrap">
+                <div class="group">
+                    <div class="group-hd">
+                        <h4>市集小组</h4>
+                        <a href="#" class="more">查看更多 ></a>
+                    </div>
+                    <ul class="group-topics">
+                        <li class="group-topic-item">
+                            <span class="topic-comment-amount">
+                                <em>9</em>
+                            </span>
+                            <a href="#" class="topic-title">【强势上新发券（活动已结束）】豆瓣线装笔记本全新上市┃珍惜 你随手写下的每分思绪</a>
+                            <em class="topic-update-time">04-26</em>
+                        </li>
+                        <li class="group-topic-item">
+                            <span class="topic-comment-amount">
+                                <em>48</em>
+                            </span>
+                            <a href="#" class="topic-title">【补货消息】豆瓣·电影畅想系列手机壳补货啦~</a>
+                            <em class="topic-update-time">04-21</em>
+                        </li>
+                        <li class="group-topic-item">
+                            <span class="topic-comment-amount">
+                                <em>90</em>
+                            </span>
+                            <a href="#" class="topic-title">【晒单邀请】参与豆瓣咖啡晒单活动，得即将上市的新品搪瓷杯</a>
+                            <em class="topic-update-time">09-28</em>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="info-footer">
+            <a href="#" class="item">
+                <i class="mui-icon"></i>
+                <span>购物说明</span>
+            </a>
+            <a href="#" class="item">
+                <i class="mui-icon"></i>
+                <span>意见反馈</span>
+            </a>
+            <a href="#" class="item">
+                <i class="mui-icon"></i>
+                <span>联系我们</span>
+            </a>
+        </div>
+    </div>
+    <div id="footer">
+        <div class="footer-wrapper">
+            <span class="logo">
+                豆瓣市集
+            </span>
+            <div class="info">
+                <p>© 2018 market.douban.com, all rights reserved 北京和光文创科技有限责任公司</p>
+                <p>注册地址：北京市朝阳区酒仙桥路14号B区3楼3层302 联系电话：4008353331-5</p>
+                <p>统一信用代码：91110105MA00G4T34T 食品经营许可证: JY11105111524423</p>
+                <p>出版物经营许可证：新出发京批字第直170330号</p>
+            </div>
         </div>
     </div>
 
@@ -215,26 +274,29 @@
 
 
     <script>
-        let doubanApp=document.querySelector(".top-nav-doubanapp");
-        let moreAct = document.querySelector("#top-nav-appintro");
-        doubanApp.onmouseover = function() {
-            moreAct.style.cssText="display:block;position:absolute;border:1px solid #e6e6e6;background-color:#fff;white-space:nowrap;top:28px;"
+        window.onload = function() {
+            let doubanApp=document.querySelector(".top-nav-doubanapp");
+            let moreAct = document.querySelector("#top-nav-appintro");
+            doubanApp.onmouseover = function() {
+                moreAct.style.cssText="display:block;position:absolute;border:1px solid #e6e6e6;background-color:#fff;white-space:nowrap;top:28px;"
+            }
+            doubanApp.onmouseout = function() {
+                moreAct.style.cssText="display:none;position:absolute;"
+            }
+            // doubanApp.onmouseout = function() {
+            //     this.className = "top-nav-doubanapp";
+            // }
+            let marHd = document.querySelector("#market-header");
+            let uPep = marHd.querySelector(".market-user");
+            let navList = marHd.querySelector(".nav-list");
+            uPep.onmouseover = function() {
+                navList.style.display = "block";
+            }
+            uPep.onmouseout = function() {
+                navList.style.display = "none";
+            }
         }
-        doubanApp.onmouseout = function() {
-            moreAct.style.cssText="display:none;position:absolute;"
-        }
-        // doubanApp.onmouseout = function() {
-        //     this.className = "top-nav-doubanapp";
-        // }
-        let marHd = document.querySelector("#market-header");
-        let uPep = marHd.querySelector(".market-user");
-        let navList = marHd.querySelector(".nav-list");
-        uPep.onmouseover = function() {
-            navList.style.display = "block";
-        }
-        uPep.onmouseout = function() {
-            navList.style.display = "none";
-        }
+        
     </script>
 </body>
 </html>
