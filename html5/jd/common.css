@@ -1,0 +1,75 @@
+* {
+    /* box-sizing: border-box; */
+}
+@font-face {
+    font-family: 'iconfont';  /* project id 667346 */
+    src: url('//at.alicdn.com/t/font_667346_6qvcb4cli3p4lsor.eot');
+    src: url('//at.alicdn.com/t/font_667346_6qvcb4cli3p4lsor.eot?#iefix') format('embedded-opentype'),
+    url('//at.alicdn.com/t/font_667346_6qvcb4cli3p4lsor.woff') format('woff'),
+    url('//at.alicdn.com/t/font_667346_6qvcb4cli3p4lsor.ttf') format('truetype'),
+    url('//at.alicdn.com/t/font_667346_6qvcb4cli3p4lsor.svg#iconfont') format('svg');
+  }
+.w {
+    position: relative;
+    height: 140px;
+    width: 1190px;
+    margin: 100px auto 0;
+    background-color: green;
+}
+.search-m {
+    height: 60px;
+    position: relative;
+}
+.search-m .form {
+    position: absolute;
+    top: 25px;
+    left: 320px;
+    width: 550px;
+    height: 35px;
+}
+.search-m .text {
+    position: absolute;
+    left: 0;
+    top: 0;
+    outline: none;
+    width: 450px;
+    height: 25px;
+    border: 1px solid transparent;
+    font-size: 14px;
+    line-height: 25px;
+    padding: 4px 44px 4px 4px;
+}
+.photo-search-btn {
+    position: absolute;
+    right: 65px;
+    top: 10px;
+    width: 19px;
+    height: 15px;
+    overflow: hidden;
+}
+.photo-search-btn .upload-bg {
+    display: block;
+    width: 19px;
+    height: 15px;
+    background: url(//misc.360buyimg.com/product/search/1.0.4/css/i/sprite-photo-search.png) no-repeat;
+    cursor: pointer;
+}
+.search-m .button {
+    position: absolute;
+    top: 0;
+    outline: none;
+    right: 0;
+    width: 50px;
+    height: 35px;
+    background-color: #f10215;
+    border: none;
+    line-height: 35px;
+    color: #fff;
+}
+.iconfont{
+    font-family:"iconfont" !important;
+    font-size:25px;font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 1.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
