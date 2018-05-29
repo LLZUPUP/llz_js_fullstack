@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>卖手机哦</title>
+</head>
+<body>
+    <!-- 门店，品牌，内存，数量，有货 -->
+    选择颜色：<select name="" id="colorSelect">
+                <option value="">请选择</option>
+                <option value="red">红色</option>
+                <option value="blue">蓝色</option>
+            </select>
+            <br>
+    输入购买数量：<input type="text" id="numberInput"/><br>
+    选择内存：<select name="" id="memeorySelect">
+                <option value="">请选择</option>
+                <option value="32G">32G</option>
+                <option value="16G">16G</option>
+            </select>
+    <br>
+    您选择了颜色：<div id="colorInfo"></div>
+    您选择了数量：<div id="numberInfo"></div>
+    您选择了内存: <div id="memeoryInfo"></div>
+    <button id="nextBtn" disabled="true">请选择手机颜色和购买数量</button>
+    <script>
+        // 购买的逻辑 手机店的ERP 要确保逻辑正确
+        // 多个输入控制相互作用的效果
+        // 库存 用代码表达 json 对象字面量
+        const goods = {
+    "red|32G": 3,
+    "red|16G": 0,
+    "blue|32G": 1,
+    "blue|16G": 6
+  };
+
+  const colorSelect = document.querySelector('#colorSelect'),
+    memeorySelect = document.querySelector('#memeorySelect'),
+    numInput = document.querySelector('#numberInput'),
+    colorInfo = document.querySelector('#colorInfo'),
+    memeoryInfo = document.querySelector('#memeoryInfo'),
+    nextBtn = document.querySelector('#nextBtn');
+
+
+    // nextBtn.innerHTML 
+    // nextBtn.disabled
+    // img.src
+    // nextBtn.setAttribute('')
+    // on+事件名
+    // addEventListener 
+    colorSelect.onchange = function() {
+      let color = this.value,
+        memeory = memeorySelect.value,
+        number = numInput.value;
+      
+      colorInfo.innerHTML = color;
+
+      // 严格
+      if (!color) {
+        nextBtn.disabled = true;
+        nextBtn.innerHTML = '请选择手机颜色';
+        return;
+      }
+
+      if (!memeory) {
+        nextBtn.disabled = true;
+        nextBtn.innerHTML = '请选择手机内存';
+        return;
+      }
+      
+      if (!number || !Number.isInteger(parseInt(number)) || parseInt(number) <= 0) {
+        console.log('输入正确的购买数量');
+        nextBtn.disabled = true;
+        nextBtn.innerHTML = '请输入正确的购买数量';
+        return;
+      }
+
+      // 是否可以下单？
+      let stock = goods[color + '|' + memeory];
+      if (number > stock) {
+        nextBtn.disabled = true;
+        nextBtn.innerHTML = '库存不足';
+        return;
+      }
+
+      nextBtn.disabled = false;
+      nextBtn.innerHTML = '收入购物车';
+      // 颜色
+      // 内存
+      // 数量
+
+    } 
+    memeorySelect.onchange = function() {
+      let color = colorSelect.value,
+        memeory = this.value,
+        number = numInput.value;
+      
+      memeoryInfo.innerHTML = memeory;
+
+      // 严格
+      if (!color) {
+        nextBtn.disabled = true;
+        nextBtn.innerHTML = '请选择手机颜色';
+        return;
+      }
+
+      if (!memeory) {
+        nextBtn.disabled = true;
+        nextBtn.innerHTML = '请选择手机内存';
+        return;
+      }
+      
+      if (!number || !Number.isInteger(parseInt(number)) || parseInt(number) <= 0) {
+        console.log('输入正确的购买数量');
+        nextBtn.disabled = true;
+        nextBtn.innerHTML = '请输入正确的购买数量';
+        return;
+      }
+
+      // 是否可以下单？
+      let stock = goods[color + '|' + memeory];
+      if (number > stock) {
+        nextBtn.disabled = true;
+        nextBtn.innerHTML = '库存不足';
+        return;
+      }
+
+      nextBtn.disabled = false;
+      nextBtn.innerHTML = '收入购物车';
+      // 颜色
+      // 内存
+      // 数量
+    } 
+
+    numInput.oninput = function() {
+      let color = colorSelect.value,
+        memeory = memeorySelect.value,
+        number = this.value;
+      
+        numberInfo.innerHTML = number;
+
+      // 严格
+      if (!color) {
+        nextBtn.disabled = true;
+        nextBtn.innerHTML = '请选择手机颜色';
+        return;
+      }
+
+      if (!memeory) {
+        nextBtn.disabled = true;
+        nextBtn.innerHTML = '请选择手机内存';
+        return;
+      }
+      
+      if (!number || !Number.isInteger(parseInt(number)) || parseInt(number) <= 0) {
+        console.log('输入正确的购买数量');
+        nextBtn.disabled = true;
+        nextBtn.innerHTML = '请输入正确的购买数量';
+        return;
+      }
+
+      // 是否可以下单？
+      let stock = goods[color + '|' + memeory];
+      if (number > stock) {
+        nextBtn.disabled = true;
+        nextBtn.innerHTML = '库存不足';
+        return;
+      }
+
+      nextBtn.disabled = false;
+      nextBtn.innerHTML = '收入购物车';
+    }
+    
+        
+    </script>
+</body>
+</html>
