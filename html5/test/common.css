@@ -1,0 +1,57 @@
+body, html {
+    color: #505050;
+    line-height: 1.75em;
+    background: #ebebeb;
+    position: relative;
+    font-family: "Helvetica Neue",Helvetica,Arial,"Hiragino Sans GB","Hiragino Sans GB W3","WenQuanYi Micro Hei","Microsoft YaHei UI","Microsoft YaHei",sans-serif;
+    font-size: 14px;
+}
+.h1, .h2, .h3, h1, h2, h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.1;
+    color: inherit;
+}
+.main-header {
+    background-color: #f4645f;
+    padding: 62px 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+}
+.col-xs-12 {
+    padding: 0 15px;
+    min-height: 1px;
+    width: 100%;
+}
+.main-header h1 {
+    font-size: 2.6rem;
+    color: #fff;
+}
+a {
+    text-decoration: none;
+    outline: none;
+}
+.btn-doc {
+    position: relative;
+    bottom: -40px;
+    border: 1px solid #f1362f;
+    background-color: transparent;
+}
+.btn-default {
+    background-color: #f4645f;
+    color: #ffffff;
+}
+.btn-default:hover {
+    border: 1px solid #303030;
+    background: #303030;
+    color: #fff;
+}
+.btn {
+    padding: 7px 14px;
+    border-radius: 2px;
+}

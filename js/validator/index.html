@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>表单验证</title>
+</head>
+<body>
+    <form action="http://xxx.com/register" id="registerForm" method="post">
+        <div class="field">
+            请输入用户名：<input type="text" name="userName" class="userName"/>
+        </div>
+        <div class="field">
+            请输入密码：<input type="password" name="password" class="password"/>
+        </div>
+        <div class="field">
+            请输入手机号码：<input type="tel" name="phoneNumber" class="phoneNumber"/>
+        </div>
+        <button>提交</button>
+    </form>
+    <script src="./validator.js"></script>
+    <script>
+        const registerForm = document.querySelector("#registerForm");
+        registerForm.onsubmit = function() {
+            // const password = strategies.minLength(registerForm.password.value,12,'密码不少于12位');
+            // const userNameResult = strategies.isNoneEmpty(registerForm.userName.value,'用户名不能为空');
+            // const phoneNumber = strategies.isNoneEmpty(registerForm.phoneNumber.value,'请输入手机号');
+            // const isMobilePhone = strategies.isMobilePhone(registerForm.phoneNumber.value,'请输入正确的手机号');
+
+            // if(!userNameResult.status) {
+            //     alert(userNameResult.msg);
+            //     return false;
+            // }else if(!password.status) {
+            //     alert(password.msg);
+            //     return false;
+            // }else if(!phoneNumber.status) {
+            //     alert(phoneNumber.msg);
+            //     return false;
+            // }
+            // else if(!isMobilePhone.status){
+            //     alert(isMobilePhone.msg);
+            //     return false;
+            // }
+            var errorMsg = validateFunc();
+            if(errorMsg) {
+                alert(errorMsg);
+                return false;
+            }
+            return true;
+        }
+        
+        // 具体的表单验证－> strategies 集合了验证逻辑(抽象的去写验证)
+        // 抽象 validateFunc 还是有很多具象的代码
+        // 什么规则(strategies)，什么元素(?)，做什么验证(key)
+        // 用户名不能为空
+        // 手机号不能为空....
+        function validateFunc() {
+            // 验证对象
+            // 验证的函数任务中，已经有了 验证策略类
+            // 有很多的不确定的数量的表单元素及规则，要去验证，
+            // 中介者模式，门清，内存，颜色，品牌，交给我们的中介者对象
+            // 就轻松很多了
+            // 要一个验证对象，得是专业的，可以将要验证的元素交给它，
+            // 验证的过程，抽象
+            // 如何给的过程
+            // 如何将要验证的元素给对象？
+            var validator = new Validator();
+            validator.add(registerForm.userName,'isNoneEmpty','用户名不能为空');
+            validator.add(registerForm.password,'minLength:6','密码不少于6位');
+            validator.add(registerForm.phoneNumber,'isMobilePhone','请输入正确的手机号');
+            var errorMsg = validator.start();
+            return errorMsg;
+        }
+        // 将要验证的表单元素加进来
+        // 开启一一验证 strategies
+        function Validator() {
+            this.cache = [];
+        }
+        Validator.prototype = {
+            add: function(dom,rule,errorMsg) {
+                var ary = rule.split(':');
+                this.cache.push(function() {
+                    var strategy = ary.shift();
+                    ary.unshift(dom.value);
+                    ary.push(errorMsg);
+                    // [value,params,errorMsg] strategy 参数顺序
+                    return strategies[strategy].apply(dom,ary)
+                })
+            },
+            start: function() {
+                for(var i = 0,validatorFunc;validatorFunc=this.cache[i++];) {
+                    var msg = validatorFunc();
+                    if(msg) {
+                        return msg;
+                    }
+                }
+            }
+        }
+       
+
+    </script>
+</body>
+</html>
