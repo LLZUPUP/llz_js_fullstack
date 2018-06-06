@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>margin重叠</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        div {
+            /* overflow: hidden; */
+        }
+        p {
+            color: #ff5555;
+            background-color: #ffcccc;
+            width: 200px;
+            line-height: 100px;
+            text-align: center;
+            margin: 100px;
+        }
+        .two {
+            margin-top: 150px;
+            display: inline-block;
+            
+        }
+    </style>
+</head>
+<body>
+    <!-- BFC的约速规则
+    同一个BFC的两个相邻BOX 的margin 会重叠，与方向无关 -->
+    <!-- 根元素是一个BFC
+    overflow:hidden 会生成一个BFC 重新划一块渲染区域 -->
+    <!-- BFC Block formatting context 块级格式化上下文
+    文档 块元素  block 页在上占位置
+    新的BFC overflow:hidden(不为visisble) 新的空间，
+    告诉浏览器，外面的环境影响不到我了，我重新来进行Block Formating 布局和定位。
+
+    核心是，新的BFC,给出了新的不受外界影响的块级格式化环境。
+
+
+    定位    position static
+    广义的定位 块级 垂直，行内元素，左右，内容
+    float 在一行的左边或一行的右边
+    flex position
+
+    BFC 重建一个上下文环境 -->
+        <p class="one">廖总真有钱</p>
+        <!-- 根元素会创建一个BFC环境
+        原来两个p 都在根body下 相同的上下文环境 -->
+    <!-- <div> -->
+        <p class="two">发哥女朋友真漂亮</p>
+    <!-- </div> -->
+    
+</body>
+</html>
