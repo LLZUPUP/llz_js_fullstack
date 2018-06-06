@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            width: 300px;
+        }
+        .aside {
+            float: left;
+            width: 100px;
+            height: 150px;
+            background-color: #f66;
+        }
+        .main {
+            height: 200px;
+            background-color: #fcc;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <!-- 两栏式布局？
+    float 离开了文档流
+    aside main 同一BFC 根元素
+    BFC 布局规则3条 每个元素的左边，要与包含box的 -->
+    <!-- BFC 布局规则第四条 BFC的区域不会与float box 重叠 -->
+    <div class="aside"></div>
+    <div class="main"></div>
+    
+</body>
+</html>
