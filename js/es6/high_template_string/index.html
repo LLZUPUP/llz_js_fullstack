@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 字符串模版 深层？ js数据与html灵与肉的结合。
+        // 嵌套`
+        // let arr = [{value: 1},{value: 2}];
+        // let message = `
+        // <ul>
+        //     ${arr.map((item)=>{
+        //         return `
+        //         <li>${item.value}</li>
+        //         `
+        //     }).join('')}
+        // </ul>
+        // `
+        // console.log(message)
+
+        // 这是一个欢迎的模版
+        let x = 'Daisy',y = 'Kevin';
+        // 标签模版
+        let message = oneline`
+            Hi,
+            ${x},
+            I am
+            ${y}.
+        `;
+        function oneline(template,...expressions) {
+            // es6 数组的函数式函数 map 新生成一个数组
+            // reduce 将数组减员 遍历数组的每一项，跟之前一项进行一个什么操作（函数）数组只有一项
+            // 经常用于将一个数组和
+            // console.log(template)
+            // console.log(expressions)
+            let result = template.reduce((prev,next,i)=>{
+                
+                let expression = expressions[i-1];
+                // console.log(prev,next,i,expression);
+                return prev + expression + next;
+            });
+            // 多行字符串，如何去除空格，删除换行
+            // 找到换行空格，把它们replace成空的
+            result = result.replace(/(\n\s*)/g," ")
+            result = result.trim();
+            // console.log(result)
+            // console.log(template)
+            // console.log(expressions)
+            return result;
+        }
+        console.log(message)
+        // 让我们的多行文本，变到一行去，trim 首尾的空格
+    </script>
+</body>
+</html>
