@@ -1,0 +1,32 @@
+.masthead.segment {
+    min-height: 700px;
+    padding: 1em 0em;
+}
+.masthead .ui.menu .ui.button {
+    margin-left: 0.5em;
+}
+.secondary.pointing.menu .toc.item {
+    display: none;
+}
+/* PC Mobile 适配的问题
+我们到底是PC为主，还是Mobile为主
+
+.item hidden
+PC .toc.item hidden
+media query
+    .toc.item block
+    .item none */
+@media only screen and (max-width:700px) {
+    .secondary.pointing.menu .item {
+        display: none;
+    }
+    .secondary.pointing.menu .toc.item {
+        display: block;
+    }   
+    
+}
+/* 让小于700 样式生效 增量式 一份代码适配所有设备 */
+
+  
+    
+
