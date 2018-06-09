@@ -12,7 +12,8 @@ const utils = {
             if(!wait) {
                 method.call(context,args)
                 wait = true;
-                setTimeout(()=> {
+                clearTimeout(timer)
+                var timer=setTimeout(()=> {
                     wait = false;
                 },delay)
             }

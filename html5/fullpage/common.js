@@ -22,25 +22,17 @@ class PureFullPage {
     }
     // 滚轮事件处理函数
     scrollMouse(e) {
-        console.log(e)
-        console.log(this.pureFullPage.scrollTop)
-        // console.log(e)
+        console.log(this.pureFullPage.offsetTop)
         let viewHeight = this.viewHeight;
-        // console.log(viewHeight)
         let top = parseInt(getComputedStyle(this.pureFullPage,null).top);
-        // console.log(top)
-        // for(let i=0;i<this.page.length;i++) {
-            if(e.wheelDeltaY>0) {
-                this.pureFullPage.style.top = (top+viewHeight)+'px'; 
+        
+        // for(let i=1;i<this.page.length;i++) {
+            if(e[0].deltaY>0) {
+                this.pureFullPage.style.top = (top-viewHeight)+'px'; 
             }else {
-                this.pureFullPage.style.top -= (top-viewHeight)+'px'; 
+                this.pureFullPage.style.top = (top+viewHeight)+'px'; 
             }
-            // console.log(i)
-        // }
-        
-        
 
-      
+
     }
-    
 }
