@@ -1,8 +1,8 @@
-var leying = {
+var obj1 = {
     name: 'sven'
 }
 
-var chenjiaqi = {
+var obj2 = {
     name: 'anne'
 }
 
