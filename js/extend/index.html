@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+//     function extend(subClass,superClass) {
+//         superClass.prototype = new subClass();
+//         superClass.prototype.constructor = superClass;
+//     }
+//     function Vehicle() {
+
+//     }
+
+//     Vehicle.prototype = {
+//         engines: 1,
+//         ignition: function() {
+//             console.log('Vehicle的点火');
+//         },
+//         drive: function() {
+//             this.ignition();
+//             console.log('Vehicle的点火后发动')
+//         }
+// };
+//     function Car() {
+
+//     }
+//     Car.prototype = {
+//     wheels: 4,
+//     drive: function() {
+//         Vehicle.drive.call(this);
+//         alert(this.wheels+'Car的发动');
+//     }
+// };
+// extend(Vehicle,Car);
+// var laosilaisi = new Car();
+// console.log(laosilaisi)
+
+// var Something = {
+//     cool: function() {
+//         this.greeting = "Hello World";
+//         this.count = this.count?this.count+1:1;
+//     }
+// }
+// Something.cool();
+// console.log(Something.greeting);
+// console.log(Something.count);
+
+// var Another = {
+//     test: function() {
+//         Something.cool.call(this);
+//     }
+// }
+// Another.test();
+// console.log(Another.greeting);
+// console.log(Another.count);
+// var test = {
+//     name: 'lele',
+//     num: 12124124243
+// }
+// test.toString();
+// console.log(typeof test)
+
+function NothingSpecial() {
+    console.log("Don't mind me!");
+}
+// var a = new NothingSpecial();
+console.log(NothingSpecial.prototype.constructor)
+
+
+
+
+
+    
+    </script>
+</body>
+</html>
