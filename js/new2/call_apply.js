@@ -6,7 +6,7 @@ var obj2 = {
     name: 'anne'
 }
 
-window.name = 'window';
+// window.name = 'window';
 
 var getName = function() {
     // 函数的this 由运行时决定，运行时的函数调用方式来决定
@@ -18,9 +18,10 @@ var getName = function() {
 // getName();
 // getName.apply(obj1);
 
-var func = function(a,b,c) {
+function func(a,b,c) {
     console.log(a,b,c);
     console.log(this)
+    console.log(this.name)
 }
 // func.apply(undefined,[1,2,3])
 func.call(obj2,1,2,3)
