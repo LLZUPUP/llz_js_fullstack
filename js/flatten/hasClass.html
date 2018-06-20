@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+</head>
+<body>
+    <div id="div" class="box active huge_box"></div>
+    <script>
+        // const box = document.querySelector('.box');
+        // console.log(box.classList.contains('active'))
+        // console.log($('#div').hasClass('active'))
+        // console.log($('#div').is('.active'))
+        const strClass = document.querySelector('.box').className;
+        const cls = 'active';
+        // const reg = new RegExp('(^|\\s)'+cls+'(\\s|$)');
+        // console.log(reg.test(strClass));
+        function hasClass(ele,cls) {
+            const reg = new RegExp('(^|\\s)'+cls+'(\\s|$)');
+            return reg.test(ele.className);
+        }
+        function removeClass(ele,cls) {
+            const reg = new RegExp('(^|\\s)'+cls+'(\\s|$)');
+                return strClass.replace(cls,'')
+        }
+        console.log(removeClass(strClass,cls));
+    </script>
+</body>
+</html>
