@@ -24,7 +24,21 @@
     // getName ();                    
     // new foo.getName ();            
     // new foo().getName ();          
-    new new foo().getName ();         
+    // new new foo().getName ();   
+    // var people = {
+    //     name: 'lelezhao',
+    //     getName: function() {
+    //         console.log(this.name)
+    //     }
+    // }
+    // var bar = people.getName;
+    // bar()
+    function foo() {
+        var a = 1;
+        console.log(this.a)
+    }
+    var a = 10;
+    foo();
     </script>
 </body>
 </html>
